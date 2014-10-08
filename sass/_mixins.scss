@@ -1,0 +1,103 @@
+/* _mixins.scss */
+
+//*============MIXINS============*/
+	//Rounds corners individually. Default set.
+	//ex: @include rounded; for default
+	//or ex: @include rounded(10px, 10px, 0, 0); for rounded top
+	@mixin rounded($tlcurve: 10px, $trcurve: 10px, $brcurve: 10px, $blcurve: 10px) {
+		-webkit-border-top-left-radius: $tlcurve;
+		border-top-left-radius: $tlcurve;
+		-o-border-top-left-radius: $tlcurve;
+		-ms-border-top-left-radius: $tlcurve;
+		-moz-border-radius-topleft: $tlcurve;
+		-webkit-border-top-right-radius: $trcurve;
+		border-top-right-radius: $trcurve;
+		-o-border-top-right-radius: $trcurve;
+		-ms-border-top-right-radius: $trcurve;
+		-moz-border-radius-topright: $trcurve;
+		-webkit-border-bottom-right-radius: $brcurve;
+		border-bottom-right-radius: $brcurve;
+		-o-border-bottom-right-radius: $brcurve;
+		-ms-border-bottom-right-radius: $brcurve;
+		-moz-border-radius-bottomright: $brcurve;
+		-webkit-border-bottom-left-radius: $blcurve;
+		border-bottom-left-radius: $blcurve;
+		-o-border-bottom-left-radius: $blcurve;
+		-ms-border-bottom-left-radius: $blcurve;
+		-moz-border-radius-bottomleft: $blcurve;
+	}
+	
+	//Rounds all corners the same. Default set.
+	//ex: @include round; for default
+	//or ex: @include round(20px);
+	@mixin round($curve: 10px) {
+		-webkit-border-radius: $curve;
+		border-radius: $curve;
+		-o-border-radius: $curve;
+		-ms-border-radius: $curve;
+		-moz-border-radius: $curve;
+	}
+	
+	//Applies boxshodow to element. Default set.
+	//ex: @include boxshadow; for default
+	//ex: @include boxshadow(.30, 0px, 0px, 7px, 1px); to set each variable
+	@mixin boxshadow ($trans: .30, $horshad: 0px, $vershad: 0px, $blurshad: 7px, $spreadshad: 1px){
+		-webkit-box-shadow:rgba(0, 0, 0, $trans) $horshad $vershad $blurshad $spreadshad;
+		box-shadow:rgba(0, 0, 0, $trans) $horshad $vershad $blurshad $spreadshad;
+		-o-box-shadow:rgba(0, 0, 0, $trans) $horshad $vershad $blurshad $spreadshad;
+		-ms-box-shadow:rgba(0, 0, 0, $trans) $horshad $vershad $blurshad $spreadshad;
+		-moz-box-shadow:rgba(0, 0, 0, $trans) $horshad $vershad $blurshad $spreadshad;
+	}
+	
+	//This allows you to prepend or append content onto something
+	//Example:
+	//#play {
+	//	@include addstuff(after, "p", "}");
+	//	@include addstuff(before, "p", "{");
+	//}
+	//Will put "{" before and "}" after the p element in the div #play
+	@mixin addstuff($befaft, $selector, $message) {
+		#{$selector}:#{$befaft} {
+			content: $message;
+		}
+	}
+
+	//Create a shiny, round button
+	@mixin shinybutton($textcolor: white, $buttoncolor: orange, $lightenby: 30%) {
+		display:inline-block;
+		@include round(16px);
+		position:relative;
+		font-size:1em;
+		color:$textcolor;
+		text-shadow:rgba(10, 10, 10, 0.496094) 1px 2px 1px;
+		text-align:center;
+		border:1px solid $buttoncolor;
+		margin:0px 15px 0px 15px;
+		padding:8px 30px 8px 30px;
+		-webkit-box-shadow:rgba($buttoncolor, .4) 0px 10px 16px;
+		box-shadow:rgba($buttoncolor, .4) 0px 10px 16px;
+		-o-box-shadow:rgba($buttoncolor, .4) 0px 10px 16px;
+		-ms-box-shadow:rgba($buttoncolor, .4) 0px 10px 16px;
+		-moz-box-shadow:rgba($buttoncolor, .4) 0px 10px 16px;
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, lighten($buttoncolor, $lightenby)), color-stop(1, $buttoncolor) );
+		background:-moz-linear-gradient( center top, lighten($buttoncolor, $lightenby) 5%, $buttoncolor 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($buttoncolor, $lightenby)', endColorstr='$buttoncolor');
+		background-color:$buttoncolor;
+		&:hover {
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, $buttoncolor), color-stop(1, lighten($buttoncolor, $lightenby)) );
+			background:-moz-linear-gradient( center top, $buttoncolor 5%, lighten($buttoncolor, $lightenby) 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$buttoncolor', endColorstr='lighten($buttoncolor, $lightenby)');
+			background-color:lighten($buttoncolor, $lightenby);
+		}
+	}
+	
+	//Set up fluid grid system
+	//ex: @include grid-unit(3); for 3 columns wide
+	$column-width: percentage(60px/980px);
+	$gutter-width: percentage(20px/980px);
+	@mixin grid-unit($span, $lmargin: 0, $rmargin: 0) {
+		width: ($column-width * $span) + ($gutter-width * ($span - 1));
+		margin-left: $lmargin;
+		margin-right: $rmargin;
+	}
+//*============END MIXINS============*/

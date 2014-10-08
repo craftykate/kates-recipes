@@ -1,0 +1,97 @@
+/* 
+Theme Name: Kate McFaul's Recipes
+Author: Kate McFaul
+Author URI: http://katemcfaul.com
+Description: Practicing Ruby by making a recipe program that will display
+recipes, create shopping lists, search recipes for ingredients, etc.
+Version: 1.0
+*/
+/* _reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+body { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* _mixins.scss */
+/* _colors.scss */
+/* _text.scss */
+body { font-family: Arial, Helvetica, sans-serif; font-size: 1em; color: #545252; }
+
+ul, p { line-height: 120%; text-align: justify; }
+
+p { margin-bottom: 1em; }
+
+a, a:visited { color: #b42327; text-decoration: none; }
+a:hover, a:focus, a:active, a:visited:hover, a:visited:focus, a:visited:active { text-decoration: underline; }
+
+i, em { font-style: italic; }
+
+strong { font-weight: bold; }
+
+.oops { color: red; }
+
+/*_mainelements*/
+body { position: relative; margin: 0 auto; background-repeat: repeat; }
+
+#wrapper { width: 90%; max-width: 980px; margin: 0 auto; }
+
+.clear { clear: both; }
+
+/*_header*/
+#header { padding-bottom: 10px; border-bottom: 1px solid #545252; }
+#header h1 { font-size: 2.5em; padding: 10px 0; }
+#header h2 { padding-bottom: 5px; }
+#header span { color: #7ebd37; }
+#header ul { text-align: center; }
+#header ul li { display: inline; }
+
+/*_sidebar*/
+#sidebar { background-color: #cccccc; -webkit-border-top-left-radius: 0; border-top-left-radius: 0; -o-border-top-left-radius: 0; -ms-border-top-left-radius: 0; -moz-border-radius-topleft: 0; -webkit-border-top-right-radius: 0; border-top-right-radius: 0; -o-border-top-right-radius: 0; -ms-border-top-right-radius: 0; -moz-border-radius-topright: 0; -webkit-border-bottom-right-radius: 10px; border-bottom-right-radius: 10px; -o-border-bottom-right-radius: 10px; -ms-border-bottom-right-radius: 10px; -moz-border-radius-bottomright: 10px; -webkit-border-bottom-left-radius: 10px; border-bottom-left-radius: 10px; -o-border-bottom-left-radius: 10px; -ms-border-bottom-left-radius: 10px; -moz-border-radius-bottomleft: 10px; width: 22.44898%; margin-left: 2.04082%; margin-right: 0; }
+#sidebar h2 { font-size: 1.2em; padding: 5px 0 5px 5px; background-color: gray; color: white; }
+#sidebar ul { padding: 5px; }
+#sidebar a h2 { margin-bottom: 3px; background-color: #b42327; }
+
+/*_content*/
+#content { width: 71.42857%; margin-left: 2.04082%; margin-right: 2.04082%; float: right; padding-top: 10px; }
+#content span { color: #7ebd37; }
+#content h2 { font-size: 1.5em; padding-bottom: 5px; margin-bottom: 5px; border-bottom: 1px solid #e6e6e6; }
+#content img.recipe { display: block; width: 400px; margin: 10px auto 20px auto; -webkit-border-radius: 10px; border-radius: 10px; -o-border-radius: 10px; -ms-border-radius: 10px; -moz-border-radius: 10px; -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; -o-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; -ms-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; }
+#content table { margin-bottom: 20px; }
+#content table tr td { padding: 5px; }
+#content table tr td:first-child { text-align: right; }
+#content div.aside { margin: 30px auto; border: 1px solid #e6e6e6; padding: 10px; -webkit-border-radius: 10px; border-radius: 10px; -o-border-radius: 10px; -ms-border-radius: 10px; -moz-border-radius: 10px; }
+#content div.aside p { color: #878585; font-size: 90%; margin-bottom: 0px; }
+#content div.index_aside { width: 90%; }
+#content ul.index { -webkit-border-radius: 10px; border-radius: 10px; -o-border-radius: 10px; -ms-border-radius: 10px; -moz-border-radius: 10px; -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; -o-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; -ms-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; margin: 30px; padding: 10px; }
+#content ul.index li.category { font-size: 1.4em; padding: 5px; }
+#content ul.index li.recipe { margin-left: 10px; }
+#content ul.index li.recipe a { font-size: 1.2em; }
+#content ul.index li.recipe span { color: #7ebd37; }
+#content div#search { font-size: 120%; width: 90%; margin: 30px auto; -webkit-border-radius: 10px; border-radius: 10px; -o-border-radius: 10px; -ms-border-radius: 10px; -moz-border-radius: 10px; -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; -o-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; -ms-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; padding: 10px; }
+#content div#search h2 { margin-top: 20px; font-size: 130%; }
+#content div#search h3 { line-height: 150%; }
+#content div#search h3 span { color: #7ebd37; }
+#content div#search ul { margin-left: 20px; }
+#content div#search ul li { line-height: 150%; }
+#content div#search ul li.recipe { font-size: 110%; }
+#content div#search ul li ul { font-size: 80%; }
+#content div#search ul li span { color: #7ebd37; }
+
+/*@import 'forms'; //Styles forms*/
+/*_footer*/
+#footer { border-top: 1px solid #545252; padding: 10px; clear: both; }
+#footer ul { text-align: center; }
+#footer li { display: inline; }
+
+/*_responsive*/
+/* main.scss */

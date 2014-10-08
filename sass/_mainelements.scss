@@ -1,0 +1,21 @@
+/*_mainelements*/
+
+//*============MAIN PAGE ELEMENTS============*/
+body {
+	position:relative; 
+	margin: 0 auto;
+	//background-image:url(../img/background.jpeg);
+	background-repeat:repeat;
+}
+
+#wrapper {
+	//background-color: pink;
+	width: 90%;
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+.clear {
+	clear:both;
+}
+//*============END MAIN PAGE ELEMENTS============*/

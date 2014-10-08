@@ -1,0 +1,27 @@
+/*_sidebar*/
+
+//*============SIDEBAR============*/
+#sidebar {
+	background-color: lighten(gray, 30%);
+	@include rounded(0, 0, 10px, 10px);
+	@include grid-unit(3, $gutter-width, 0);
+	h2 {
+		font-size: 1.2em;
+		padding: 5px 0 5px 5px;
+		background-color: gray;
+		color: white;
+	}
+	ul {
+		padding: 5px;
+		li {
+		}
+	}
+	a {
+		h2 {
+			margin-bottom: 3px;
+			background-color: $red;
+			//color: $text;
+		}
+	}
+}
+//*============END SIDEBAR============*/

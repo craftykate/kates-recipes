@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="../css/style.css" rel="stylesheet" >
+  <meta charset="utf-8" >
+	<title><%= name %> | Kate's Recipes</title>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+  <h1><%= name %></h1>
+  <h2>Source: <span><%= source %></span><% if rating != nil %>; Rating: <span><%= rating %><% end %></span></h2>
+  <h2>Serves: <span><%= serves %></span>; Category: <span><%= category %></span></h2>
+</div> <!--header-->
+<div id="content">
+  <% if image_loc != nil %>
+    <img src="../img/<%= image_loc %>" alt="" class="recipe" />
+  <% end %>
+  <p><% if bake_temp != nil %>Oven Temp: <span><%= bake_temp %></span><% end %><% if bake_for != nil %>; Bake for: <span><%= bake_for %></span><% end %></p>
+  <h2><%= "Ingredients:".upcase %></h2>
+  <table>
+    <% ingredients.each do |ingredient| %>
+      <%= ingredient %>
+    <% end %>
+  </table>
+  <h2><%= "Directions:".upcase %></h2>
+  <% directions.split("**").each do |para| %>
+    <p><%= para %>
+  <% end %>
+  <div class="aside"><p><strong>Want to create a shopping list for multiple recipes?</strong> It's easy! Just navigate your terminal window to the recipes folder and run "ruby lib/create_shopping_list.rb". It will ask which recipes you want to create a list for and combine all ingredients into one handy list!</p><br/>
+  <p><strong>Want to coook with certain ingredients and not others?</strong> Maybe you have some ground beef you want to use up but you know you're out of sour cream. Which recipes can you make?? Navigate your terminal window to the recipes folder and run "ruby lib/search_recipes.rb". Voila!</p><br/>
+  <p><strong>Want to add another recipe?</strong> Navigate that good old terminal window to the recipes folder and run "ruby lib/add_recipe.rb". It will ask you all kinds of questions about your recipe and ingredients and when you're done your recipe will magically show up here!</p><br/>
+  <p><strong>Does your recipe serve 4 but you need to serve 6?</strong> Does your recipe make 2 loaves but you only have ingredients for 1? Multiply it! Okay, divide it, but run "ruby lib/multiply_recipe.rb", tell it which recipe to act on, how much you want to multiply and it will give you a new list of ingredients!</p></div>
+</div><!--content-->
+<div id="sidebar">
+  <a href="../index.html"><h2>Home</h2></a>
+  <h2>All Recipes</h2>
+  <ul>
+    <% each_recipe.each_with_index do |recipe, i| %>
+      <% if i == 0 || recipe[3] != each_recipe[i-1][3] %>
+        <li><%= recipe[3] %></li>
+      <% end %>
+      <li><a href="<%= recipe[1] %>_<%= recipe[2] %>.html"><%= recipe[0] %></a></li>
+    <% end %>
+  </ul>
+</div>
+<div id="footer">
+  <ul><li>Created by <a href="http://katemcfaul.com" target=_blank >Kate McFaul</a></li></ul>
+</div>
+</div><!--wrapper-->
+</body>
+</html>
