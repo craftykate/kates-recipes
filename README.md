@@ -90,7 +90,6 @@ Want to make two batches of zucchini bread and one batch of Turkey Noodle Casser
 - The program will list all the recipes you have stored and ask which ones you want to compile a shopping list for like such:
 
 ```
-~~~~~~~~~~~~~~~~~~~~~~~~~
 Hello! Here are all your recipes
 1. Secondhand Turkey
 2. Turkey Noodle Casserole
@@ -98,14 +97,13 @@ Hello! Here are all your recipes
 4. Green Smoothie
 5. Zucchini Bread
 6. Fried Zucchini
-~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Which recipes would you like to make a shopping list from?
 Just enter their numbers separated by commas.
 For instance, if you want to make
 two batches of recipe 3 and 
 one batch of recipe 1, enter: 
 3, 3, 1
-~~~~~~~~~~~~~~~~~~~~~~~~~
 ```
 
 - For our example above of two batches of zucchini bread and one of Turkey Noodle Casserole, you'd enter `5, 5, 2` and hit enter. 
@@ -120,7 +118,6 @@ Does your recipe serve 4, but you need to serve 6? Does it make two loaves but y
 - - The program will list all the recipes you have stored and ask which one you want to multiply divide, like so:
 
 ```
-~~~~~~~~~~~~~~~~~~~~~~
 Here are all your recipes for your reference
 1: Secondhand Turkey
 2: Turkey Noodle Casserole
@@ -128,7 +125,7 @@ Here are all your recipes for your reference
 4: Green Smoothie
 5: Zucchini Bread
 6: Fried Zucchini
-~~~~~~~~~~~~~~~~~~~~~~
+
 Does your recipe serve 4 but you need to serve 6?
 Does it make 2 loaves but you only have ingredients for 1?
 This program will multiply (or divide!) the ingredients in your recipes!
