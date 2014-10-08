@@ -141,9 +141,9 @@ To pick the second recipe enter the number 2.
 
 Okay, the program has some shortcomings, but the point was to stretch my new Ruby skills and CSV exposure wherever my imagination took them, not to create a perfect program. 
 
-For instance, I wouldn't want to input data through a terminal window, I'd build a nice form on a php page and instead of adding each ingredient by hand I'd display the ingredients in a drop down menu. Humans are fallible. Computers are literal. "Ground beef" is not the same as a misspelled "Gruond beef". "Eggs" are not the same as "Egg". A
+For instance, I wouldn't want to input data through a terminal window, I'd build a nice form on a php page and instead of adding each ingredient by hand I'd display the ingredients in a drop down menu. Humans are fallible. Computers are literal. "Ground beef" is not the same as a misspelled "Gruond beef". "Eggs" are not the same as "Egg". 
 
-lso, if I'm creating a shopping list and one recipe calls for 2 tbsps of milk and another calls for 1 cup of milk and another for 1/2 cup of milk, my shopping will tell me to buy 1.5 cups of milk and 2 tbsps of milk. This is an easy fix with math, converting all the various inputs so the program can say to buy 1.6 cups of milk (or whatever 1.5 cups plus 2 tbsps is) but again, that's missing the point of the exercise. 
+Also, if I'm creating a shopping list and one recipe calls for 2 tbsps of milk and another calls for 1 cup of milk and another for 1/2 cup of milk, my shopping will tell me to buy 1.5 cups of milk and 2 tbsps of milk. This is an easy fix with math, converting all the various inputs so the program can say to buy 1.6 cups of milk (or whatever 1.5 cups plus 2 tbsps is) but again, that's missing the point of the exercise. 
 
 You also can't edit/delete the recipes, but again, the point of the program...
 
